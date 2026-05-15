@@ -149,11 +149,13 @@ document.addEventListener('DOMContentLoaded', () => {
         const stats = document.querySelectorAll('.stat-number');
         stats.forEach(stat => {
             const target = +stat.getAttribute('data-target');
-            gsap.to(stat, {
-                innerText: target,
+            gsap.to({ val: 0 }, {
+                val: target,
                 duration: 2,
-                snap: { innerText: 1 },
                 ease: 'power1.out',
+                onUpdate: function() {
+                    stat.innerText = Math.floor(this.val);
+                },
                 scrollTrigger: {
                     trigger: stat,
                     start: 'top 90%',
@@ -182,44 +184,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    /* ================= TESTIMONIALS DRAG SCROLL ================= */
-    const testimonialsRow = document.querySelector('.testimonials-row');
-    if (testimonialsRow) {
-        let isDown = false;
-        let startX;
-        let scrollLeft;
-        testimonialsRow.addEventListener('mousedown', (e) => {
-            isDown = true;
-            startX = e.pageX - testimonialsRow.offsetLeft;
-            scrollLeft = testimonialsRow.scrollLeft;
-        });
-        testimonialsRow.addEventListener('mouseleave', () => { isDown = false; });
-        testimonialsRow.addEventListener('mouseup', () => { isDown = false; });
-        testimonialsRow.addEventListener('mousemove', (e) => {
-            if (!isDown) return;
-            e.preventDefault();
-            const x = e.pageX - testimonialsRow.offsetLeft;
-            const walk = (x - startX) * 2;
-            testimonialsRow.scrollLeft = scrollLeft - walk;
-        });
-    }
 
-    /* ================= NEWSLETTER FEEDBACK ================= */
-    const newsletterForm = document.querySelector('.newsletter-form');
-    if (newsletterForm) {
-        newsletterForm.addEventListener('submit', (e) => {
-            e.preventDefault();
-            const btn = newsletterForm.querySelector('button');
-            const originalText = btn.innerHTML;
-            btn.innerHTML = '<i class="fas fa-check"></i> Subscribed';
-            btn.style.background = 'var(--accent-green)';
-            newsletterForm.reset();
-            setTimeout(() => {
-                btn.innerHTML = originalText;
-                btn.style.background = '';
-            }, 3000);
-        });
-    }
 
     /* ================= INITIALIZE ================= */
     animateCounters();
