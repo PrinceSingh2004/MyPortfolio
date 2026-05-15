@@ -147,21 +147,52 @@ document.addEventListener('DOMContentLoaded', () => {
     /* ================= STATS COUNTER ANIMATION ================= */
     function animateCounters() {
         const stats = document.querySelectorAll('.stat-number');
-        stats.forEach(stat => {
-            const target = +stat.getAttribute('data-target');
-            gsap.to({ val: 0 }, {
-                val: target,
-                duration: 2,
-                ease: 'power1.out',
-                onUpdate: function() {
-                    stat.innerText = Math.floor(this.val);
-                },
-                scrollTrigger: {
-                    trigger: stat,
-                    start: 'top 90%',
-                    toggleActions: 'play none none none'
+        
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.5
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const stat = entry.target;
+                    const targetText = stat.getAttribute('data-target');
+                    const target = Number(targetText);
+                    const suffix = stat.getAttribute('data-suffix') || '';
+                    
+                    if (isNaN(target)) return;
+
+                    let startTime = null;
+                    const duration = 2000;
+
+                    function updateCounter(currentTime) {
+                        if (!startTime) startTime = currentTime;
+                        const progress = Math.min((currentTime - startTime) / duration, 1);
+                        
+                        // easeOutExpo
+                        const easeProgress = progress === 1 ? 1 : 1 - Math.pow(2, -10 * progress);
+                        
+                        const currentValue = Math.floor(easeProgress * target);
+                        stat.innerText = currentValue + suffix;
+                        
+                        if (progress < 1) {
+                            requestAnimationFrame(updateCounter);
+                        } else {
+                            stat.innerText = target + suffix;
+                            stat.classList.add('glow-pulse');
+                        }
+                    }
+
+                    requestAnimationFrame(updateCounter);
+                    observer.unobserve(stat);
                 }
             });
+        }, observerOptions);
+
+        stats.forEach(stat => {
+            observer.observe(stat);
         });
     }
 
@@ -186,7 +217,70 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+    /* ================= CONTACT FORM ================= */
+    const contactForm = document.getElementById('contact-form');
+    if (contactForm) {
+        contactForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const btn = contactForm.querySelector('button');
+            const successMsg = document.getElementById('form-success');
+            const errorMsg = document.getElementById('form-error');
+            
+            const originalText = btn.innerHTML;
+            btn.innerHTML = 'Sending...';
+            btn.disabled = true;
+            successMsg.style.display = 'none';
+            errorMsg.style.display = 'none';
+
+            try {
+                const response = await fetch(contactForm.action, {
+                    method: 'POST',
+                    body: new FormData(contactForm),
+                    headers: { 'Accept': 'application/json' }
+                });
+                
+                if (response.ok) {
+                    successMsg.style.display = 'block';
+                    contactForm.reset();
+                } else {
+                    errorMsg.style.display = 'block';
+                }
+            } catch (error) {
+                errorMsg.style.display = 'block';
+            } finally {
+                btn.innerHTML = originalText;
+                btn.disabled = false;
+                setTimeout(() => {
+                    successMsg.style.display = 'none';
+                    errorMsg.style.display = 'none';
+                }, 5000);
+            }
+        });
+    }
+
     /* ================= INITIALIZE ================= */
     animateCounters();
     animateProficiency();
+
+    /* ================= RESUME DOWNLOAD HANDLER ================= */
+    document.querySelectorAll(".resume-btn").forEach((btn) => {
+        btn.addEventListener("click", async (e) => {
+            const fileUrl = btn.getAttribute("href");
+
+            try {
+                const response = await fetch(fileUrl, { method: "HEAD" });
+
+                if (!response.ok) {
+                    e.preventDefault();
+                    alert("Resume file not found. Please upload Prince_Singh_Resume.pdf inside assets folder.");
+                } else {
+                    console.log("Resume download started");
+                }
+            } catch (error) {
+                e.preventDefault();
+                alert("Resume download failed. Check file path or deployment.");
+            }
+        });
+    });
+
 });

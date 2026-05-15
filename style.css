@@ -1900,3 +1900,59 @@ h5,
     color: var(--accent-green) !important;
     text-shadow: 0 0 10px var(--accent-green);
 }
+
+/* ================= STATS COUNTER GLOW ================= */
+@keyframes textGlowPulse {
+    0% {
+        text-shadow: 0 0 0 transparent;
+        color: var(--text-primary);
+    }
+    50% {
+        text-shadow: 0 0 20px var(--accent-cyan), 0 0 40px var(--accent-purple);
+        color: #fff;
+    }
+    100% {
+        text-shadow: 0 0 5px var(--accent-cyan);
+        color: var(--text-primary);
+    }
+}
+
+.glow-pulse {
+    animation: textGlowPulse 1.5s ease-in-out;
+}
+
+/* ================= RESUME BUTTON & TOOLTIP ================= */
+.resume-btn {
+    position: relative;
+    overflow: visible !important;
+}
+
+.resume-tooltip {
+    position: absolute;
+    bottom: 120%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(231, 76, 60, 0.9);
+    color: white;
+    padding: 8px 12px;
+    border-radius: 8px;
+    font-size: 0.75rem;
+    font-family: var(--font-mono);
+    white-space: nowrap;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    box-shadow: 0 5px 15px rgba(231, 76, 60, 0.3);
+    z-index: 100;
+}
+
+.resume-tooltip::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 5px;
+    border-style: solid;
+    border-color: rgba(231, 76, 60, 0.9) transparent transparent transparent;
+}

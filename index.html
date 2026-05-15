@@ -5,10 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Prince Singh | Software Engineer + AI Specialist</title>
-    <meta name="description"
-        content="Prince Singh's Portfolio - Full-Stack Engineer + AI Builder. Crafting scalable systems and intelligent solutions.">
-    <meta property="og:title" content="Prince Singh | Software Engineer & AI Developer">
-    <meta property="og:description" content="Portfolio of Prince Singh — Software Engineering, Web Development, and AI/ML projects.">
+    <meta name="description" content="Download Prince Singh Resume - Software Engineering Student and AI/ML Learner">
+    <meta property="og:title" content="Prince Singh | Software Engineering Student & AI/ML Learner">
+    <meta property="og:description"
+        content="Portfolio of Prince Singh — B.Tech CSE student at NIET focused on DSA, Web Development, Python, Java, and AI/ML.">
     <meta property="og:image" content="assets/og-image.png">
     <meta property="og:type" content="website">
     <meta name="twitter:card" content="summary_large_image">
@@ -80,6 +80,11 @@
             <a href="#about" class="mobile-link">About</a>
             <a href="#deep-dives" class="mobile-link">Deep Dives</a>
             <a href="#contact" class="mobile-link">Contact</a>
+            <a href="./assets/Prince_Singh_Resume.pdf" download="Prince_Singh_Resume.pdf" target="_blank" class="mobile-link resume-btn"
+                aria-label="Download Prince Singh Resume"
+                style="color: var(--accent-cyan); font-size: 1.5rem; margin-top: 1rem;">
+                Resume <i class="fas fa-download"></i>
+            </a>
         </div>
     </div>
 
@@ -92,18 +97,27 @@
                             class="pulse-dot"></span></p>
                     <h1 class="hero-name cinematic-intro text-reveal glow-hover">Prince Singh</h1>
                     <h2 class="hero-title cinematic-intro">
-                        Software Engineer | Web Developer | AI Enthusiast
+                        Software Engineering Student | AI/ML Learner | Web Developer
                     </h2>
                     <p class="hero-subtitle cinematic-intro">Building scalable web applications and learning AI/ML.
                         Passionate about crafting clean code and modern user experiences.</p>
 
                     <div class="hero-cta cinematic-intro">
-                        <a href="#projects" class="btn btn-primary glow-btn ripple">
-                            <span>View My Work</span>
-                            <i class="fas fa-arrow-right"></i>
-                        </a>
-                        <a href="Prince_Singh_Resume.pdf" download class="btn glass-btn glow-hover ripple">
+                        <a href="./assets/Prince_Singh_Resume.pdf" download="Prince_Singh_Resume.pdf" target="_blank"
+                            class="btn btn-primary glow-btn ripple resume-btn"
+                            aria-label="Download Prince Singh Resume">
                             <span>Download Resume</span>
+                            <i class="fas fa-download"></i>
+                        </a>
+                        <a href="https://github.com/PrinceSingh2004" target="_blank"
+                            class="btn glass-btn glow-hover ripple" onclick="console.log('github_click')">
+                            <span>GitHub</span>
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="mailto:ps1263859@gmail.com" class="btn glass-btn glow-hover ripple"
+                            onclick="console.log('email_click')">
+                            <span>Email Me</span>
+                            <i class="fas fa-paper-plane"></i>
                         </a>
                     </div>
                 </div>
@@ -121,20 +135,20 @@
             <div class="section-container">
                 <div class="stats-grid">
                     <div class="stat-item fade-up">
-                        <div class="stat-number" data-target="3">0</div>
-                        <div class="stat-label">Projects Shipped</div>
+                        <div class="stat-number" data-target="3" data-suffix="">0</div>
+                        <div class="stat-label">Projects Built</div>
                     </div>
                     <div class="stat-item fade-up">
-                        <div class="stat-number" data-target="50">0</div>
-                        <div class="stat-label">Lines of Code (K+)</div>
+                        <div class="stat-number" data-target="50" data-suffix="K+">0</div>
+                        <div class="stat-label">Lines of Code</div>
                     </div>
                     <div class="stat-item fade-up">
-                        <div class="stat-number" data-target="5">0</div>
-                        <div class="stat-label">Open Source Contribs</div>
+                        <div class="stat-number" data-target="0" data-suffix="">0</div>
+                        <div class="stat-label">GitHub Contributions</div>
                     </div>
                     <div class="stat-item fade-up">
-                        <div class="stat-number" data-target="12">0</div>
-                        <div class="stat-label">Tech Stack Mastered</div>
+                        <div class="stat-number" data-target="12" data-suffix="">0</div>
+                        <div class="stat-label">Technologies Learned</div>
                     </div>
                 </div>
             </div>
@@ -150,17 +164,21 @@
 
                 <div class="projects-grid">
                     <!-- Project 1: Blink -->
-                    <div class="project-card glass-panel fade-up cinematic-card" data-tilt>
+                    <div class="project-card glass-panel fade-up cinematic-card" data-tilt
+                        onclick="console.log('project_view_click')">
                         <div class="project-image">
-                            <img src="blink_platform_preview_1776264793660.png" alt="Blink Platform">
+                            <img src="blink_platform_preview_1776264793660.png" alt="Blink Platform Prototype"
+                                loading="lazy">
                             <div class="image-overlay"></div>
                         </div>
                         <div class="project-content">
-                            <div class="project-badge">SWE / High Performance</div>
+                            <div class="project-badge">Learning Project</div>
                             <h3 class="project-title">Blink Platform</h3>
-                            <p class="project-desc">A highly responsive social platform prototype with infinite scroll optimization
-                                and seamless media delivery.</p>
-                            <p class="project-metrics text-green"><i class="fas fa-chart-line"></i> Scalable Architecture</p>
+                            <p class="project-desc">Built and deployed a full-stack Blink platform prototype using
+                                Render. Demo may take 30–60 seconds to load on first visit due to free-tier server
+                                wake-up.</p>
+                            <p class="project-metrics text-green"><i class="fas fa-check-circle"></i> Practiced
+                                Deployment</p>
                             <div class="project-tech">
                                 <span class="glass-tag">Node.js</span>
                                 <span class="glass-tag">Redis</span>
@@ -168,56 +186,63 @@
                             </div>
                             <div class="project-actions">
                                 <a href="https://blink-yzoo.onrender.com" target="_blank"
-                                    class="btn btn-outline small-btn ripple">View Live</a>
+                                    class="btn btn-outline small-btn ripple">Live Demo</a>
                                 <a href="https://github.com/PrinceSingh2004/Blink.git" target="_blank"
-                                    class="btn btn-outline small-btn ripple"><i
-                                        class="fab fa-github"></i> Source Code</a>
+                                    class="btn btn-outline small-btn ripple"><i class="fab fa-github"></i> Source
+                                    Code</a>
                             </div>
                         </div>
                     </div>
 
                     <!-- Project 2: MedAI -->
-                    <div class="project-card glass-panel fade-up cinematic-card" data-tilt>
+                    <div class="project-card glass-panel fade-up cinematic-card" data-tilt
+                        onclick="console.log('project_view_click')">
                         <div class="project-image">
-                            <img src="medai_guardian_preview_1776264834346.png" alt="MedAI Guardian">
+                            <img src="medai_guardian_preview_1776264834346.png" alt="MedAI Guardian Prototype"
+                                loading="lazy">
                             <div class="image-overlay"></div>
                         </div>
                         <div class="project-content">
-                            <div class="project-badge">AI Healthcare</div>
+                            <div class="project-badge">Prototype</div>
                             <h3 class="project-title">MedAI Guardian</h3>
-                            <p class="project-desc">Experimental ML-based health support prototype providing preliminary guidance.</p>
-                            <p class="project-metrics text-purple"><i class="fas fa-shield-alt"></i> Image-analysis workflow</p>
+                            <p class="project-desc">Experimental ML-based health support prototype providing preliminary
+                                guidance.</p>
+                            <p class="project-metrics text-purple"><i class="fas fa-shield-alt"></i> Learning project
+                            </p>
                             <div class="project-tech">
                                 <span class="glass-tag">Python</span>
                                 <span class="glass-tag">PyTorch</span>
                                 <span class="glass-tag">Local LLMs</span>
                             </div>
                             <div class="project-actions">
-                                <a href="javascript:void(0)" class="btn btn-outline small-btn ripple disabled">Coming Soon</a>
+                                <a href="javascript:void(0)" class="btn btn-outline small-btn ripple disabled">Coming
+                                    Soon</a>
                             </div>
                         </div>
                     </div>
 
                     <!-- Project 3: Offline LLM -->
-                    <div class="project-card glass-panel fade-up cinematic-card" data-tilt>
+                    <div class="project-card glass-panel fade-up cinematic-card" data-tilt
+                        onclick="console.log('project_view_click')">
                         <div class="project-image">
-                            <img src="offline_llm_preview_1776264864059.png" alt="Offline Secure LLM">
+                            <img src="offline_llm_preview_1776264864059.png" alt="Offline Secure LLM Prototype"
+                                loading="lazy">
                             <div class="image-overlay"></div>
                         </div>
                         <div class="project-content">
-                            <div class="project-badge">Secure AI</div>
+                            <div class="project-badge">Prototype</div>
                             <h3 class="project-title">Offline Secure LLM</h3>
                             <p class="project-desc">Privacy-centric chatbot powered by quantized models running entirely
                                 local.</p>
-                            <p class="project-metrics text-blue"><i class="fas fa-microchip"></i> 0ms External Latency
-                            </p>
+                            <p class="project-metrics text-blue"><i class="fas fa-microchip"></i> Learning project</p>
                             <div class="project-tech">
                                 <span class="glass-tag">Llama.cpp</span>
                                 <span class="glass-tag">CUDA</span>
                                 <span class="glass-tag">Python</span>
                             </div>
                             <div class="project-actions">
-                                <a href="javascript:void(0)" class="btn btn-outline small-btn ripple disabled">Coming Soon</a>
+                                <a href="javascript:void(0)" class="btn btn-outline small-btn ripple disabled">Coming
+                                    Soon</a>
                             </div>
                         </div>
                     </div>
@@ -309,8 +334,8 @@
                             <div class="dot-pulse"></div>
                         </div>
                         <div class="timeline-content glass-panel cinematic-card">
-                            <div class="timeline-date">2026 - Present</div>
-                            <h3>AI/ML Learning + Portfolio Projects</h3>
+                            <div class="timeline-date">2026–Present</div>
+                            <h3>Learning AI/ML and creating portfolio projects</h3>
                             <p><strong>Independent Builder</strong></p>
                             <ul>
                                 <li>Building scalable web apps and AI-driven prototypes.</li>
@@ -322,8 +347,8 @@
                     <div class="timeline-item flex-left">
                         <div class="timeline-dot"></div>
                         <div class="timeline-content glass-panel cinematic-card">
-                            <div class="timeline-date">2025 - Present</div>
-                            <h3>Web Development Projects</h3>
+                            <div class="timeline-date">2025–Present</div>
+                            <h3>Building Web Development Projects</h3>
                             <p><strong>Freelance & Personal Projects</strong></p>
                             <ul>
                                 <li>Developed responsive UI designs and dashboards.</li>
@@ -335,8 +360,8 @@
                     <div class="timeline-item flex-right">
                         <div class="timeline-dot"></div>
                         <div class="timeline-content glass-panel cinematic-card">
-                            <div class="timeline-date">2024 - Present</div>
-                            <h3>B.Tech CSE Student</h3>
+                            <div class="timeline-date">2024–Present</div>
+                            <h3>B.Tech CSE Student at NIET</h3>
                             <p><strong>NIET, Greater Noida</strong></p>
                             <ul>
                                 <li>Focusing on core Computer Science fundamentals.</li>
@@ -354,17 +379,20 @@
                 <div class="about-grid">
                     <div class="about-image fade-up">
                         <div class="about-image-container glass-panel">
-                            <img src="prince_portrait_1776265426269.png" alt="Prince Singh">
+                            <img src="Prince_Singh_potrait.jpg" alt="Prince Singh Portrait" loading="lazy">
                         </div>
                     </div>
                     <div class="about-text fade-up">
                         <p class="section-badge">Identity</p>
                         <h2 class="section-title">Software Engineer + <span class="gradient-text">AI Developer</span>
                         </h2>
-                        <p class="fade-up">I am Prince Singh, an aspiring software engineer focusing on web development and artificial intelligence. My goal is to build robust web applications and learn the latest in machine learning technologies.</p>
+                        <p class="fade-up">I am Prince Singh, an aspiring software engineer focusing on web development
+                            and artificial intelligence. My goal is to build robust web applications and learn the
+                            latest in machine learning technologies.</p>
 
                         <div class="mission-box fade-up">
-                            <p class="mission-text">"I focus on developing scalable systems and AI-driven prototypes, constantly learning and applying new concepts to build better software."</p>
+                            <p class="mission-text">"I focus on developing scalable systems and AI-driven prototypes,
+                                constantly learning and applying new concepts to build better software."</p>
                         </div>
 
                         <div class="personality-facts fade-up" style="margin-top: 2rem;">
@@ -372,6 +400,15 @@
                             </p>
                             <p><strong>Fun Fact:</strong> I love reverse-engineering legacy systems to find hidden
                                 performance bottlenecks.</p>
+                        </div>
+
+                        <div class="fade-up" style="margin-top: 2rem;">
+                            <a href="./assets/Prince_Singh_Resume.pdf" download="Prince_Singh_Resume.pdf" target="_blank"
+                                class="btn btn-outline glow-hover ripple resume-btn"
+                                aria-label="Download Prince Singh Resume">
+                                <span>Download Resume</span>
+                                <i class="fas fa-download"></i>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -391,19 +428,22 @@
                         <p class="blog-tag">Architecture</p>
                         <h3 class="blog-title">Building Scalable Node.js Applications</h3>
                         <p>Exploring cursor-based pagination and Redis caching for high-traffic platforms.</p>
-                        <a href="javascript:void(0)" class="nav-link text-cyan disabled" style="opacity:0.5;pointer-events:none;">Coming Soon <i class="fas fa-arrow-right"></i></a>
+                        <a href="javascript:void(0)" class="nav-link text-cyan disabled"
+                            style="opacity:0.5;pointer-events:none;">Coming Soon <i class="fas fa-arrow-right"></i></a>
                     </div>
                     <div class="blog-card fade-up">
                         <p class="blog-tag">Databases</p>
                         <h3 class="blog-title">PostgreSQL Optimization Strategies</h3>
                         <p>How I reduced query latency by 40% through advanced indexing and partitioning.</p>
-                        <a href="javascript:void(0)" class="nav-link text-cyan disabled" style="opacity:0.5;pointer-events:none;">Coming Soon <i class="fas fa-arrow-right"></i></a>
+                        <a href="javascript:void(0)" class="nav-link text-cyan disabled"
+                            style="opacity:0.5;pointer-events:none;">Coming Soon <i class="fas fa-arrow-right"></i></a>
                     </div>
                     <div class="blog-card fade-up">
                         <p class="blog-tag">Artificial Intelligence</p>
                         <h3 class="blog-title">AI Integration in Full-Stack Apps</h3>
                         <p>Architecting secure, privacy-first AI features using localized model pipelines.</p>
-                        <a href="javascript:void(0)" class="nav-link text-cyan disabled" style="opacity:0.5;pointer-events:none;">Coming Soon <i class="fas fa-arrow-right"></i></a>
+                        <a href="javascript:void(0)" class="nav-link text-cyan disabled"
+                            style="opacity:0.5;pointer-events:none;">Coming Soon <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
             </div>
@@ -429,11 +469,13 @@
                             <span class="glass-tag">Kubernetes</span><span class="glass-tag">Terraform</span><span
                                 class="glass-tag">AWS</span>
                         </div>
-                        <a href="javascript:void(0)" class="btn btn-primary glow-btn disabled" style="opacity:0.5;pointer-events:none;">Coming Soon</a>
+                        <a href="javascript:void(0)" class="btn btn-primary glow-btn disabled"
+                            style="opacity:0.5;pointer-events:none;">Coming Soon</a>
                     </div>
                     <div class="about-image fade-up">
                         <div class="about-image-container glass-panel">
-                            <img src="project_case_study_preview_1776265460800.png" alt="Case Study">
+                            <img src="project_case_study_preview_1776265460800.png"
+                                alt="Cloud Infrastructure Case Study Diagram" loading="lazy">
                         </div>
                     </div>
                 </div>
@@ -447,10 +489,10 @@
                     <p class="section-badge">Academic</p>
                     <h2 class="section-title">Education <span class="gradient-text">Background</span></h2>
                 </div>
-                
+
                 <div class="timeline-container fade-up" style="margin-top: 3rem;">
                     <div class="timeline-line"></div>
-                    
+
                     <div class="timeline-item flex-right">
                         <div class="timeline-dot">
                             <div class="dot-pulse"></div>
@@ -459,8 +501,10 @@
                             <div class="timeline-date">2023 - Present</div>
                             <h3>B.Tech Computer Science and Engineering</h3>
                             <p><strong>NIET, Greater Noida</strong> | 2nd Year</p>
-                            <p style="margin-top: 1rem; color: var(--text-dim);"><strong>Focus Areas:</strong> DSA, Web Development, AI/ML, Python, Java</p>
-                            <p style="margin-top: 0.5rem; color: var(--text-dim);"><em>CGPA: Available on resume</em></p>
+                            <p style="margin-top: 1rem; color: var(--text-dim);"><strong>Focus Areas:</strong> DSA, Web
+                                Development, AI/ML, Python, Java</p>
+                            <p style="margin-top: 0.5rem; color: var(--text-dim);"><em>CGPA: Available on resume</em>
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -473,24 +517,58 @@
                 <div class="fade-up">
                     <p class="section-badge">Initialize Project</p>
                     <h2 class="hero-name">Let's Build Something <span class="gradient-text">Great</span></h2>
-                    <p style="margin: 2rem auto; max-width: 600px;">Visionary projects require robust architecture and
-                        intelligent AI. My inbox is always open for opportunities.</p>
+                    <p style="margin: 2rem auto; max-width: 600px;">My inbox is always open for opportunities.</p>
 
-                    <div class="hero-cta">
-                        <a href="mailto:ps1263859@gmail.com" class="btn btn-primary glow-btn ripple">
-                            <span>Email Me</span>
-                            <i class="fas fa-paper-plane"></i>
+                    <form id="contact-form" action="https://formspree.io/f/placeholder" method="POST"
+                        class="contact-form"
+                        style="max-width: 500px; margin: 0 auto; text-align: left; background: var(--glass-panel); padding: 2.5rem; border-radius: 1rem; border: 1px solid var(--glass-border); position: relative;">
+                        <div style="margin-bottom: 1.5rem;">
+                            <label
+                                style="display: block; margin-bottom: 0.5rem; font-weight: 500; font-size: 0.9rem; color: var(--text-dim);">Name</label>
+                            <input type="text" name="name" required
+                                style="width: 100%; padding: 0.8rem 1rem; border-radius: 0.5rem; border: 1px solid rgba(255,255,255,0.1); background: rgba(0,0,0,0.2); color: white; outline: none; transition: border 0.3s;"
+                                onfocus="this.style.borderColor='var(--accent-cyan)'"
+                                onblur="this.style.borderColor='rgba(255,255,255,0.1)'">
+                        </div>
+                        <div style="margin-bottom: 1.5rem;">
+                            <label
+                                style="display: block; margin-bottom: 0.5rem; font-weight: 500; font-size: 0.9rem; color: var(--text-dim);">Email</label>
+                            <input type="email" name="email" required
+                                style="width: 100%; padding: 0.8rem 1rem; border-radius: 0.5rem; border: 1px solid rgba(255,255,255,0.1); background: rgba(0,0,0,0.2); color: white; outline: none; transition: border 0.3s;"
+                                onfocus="this.style.borderColor='var(--accent-cyan)'"
+                                onblur="this.style.borderColor='rgba(255,255,255,0.1)'">
+                        </div>
+                        <div style="margin-bottom: 1.5rem;">
+                            <label
+                                style="display: block; margin-bottom: 0.5rem; font-weight: 500; font-size: 0.9rem; color: var(--text-dim);">Message</label>
+                            <textarea name="message" required rows="4"
+                                style="width: 100%; padding: 0.8rem 1rem; border-radius: 0.5rem; border: 1px solid rgba(255,255,255,0.1); background: rgba(0,0,0,0.2); color: white; outline: none; transition: border 0.3s; resize: vertical;"
+                                onfocus="this.style.borderColor='var(--accent-cyan)'"
+                                onblur="this.style.borderColor='rgba(255,255,255,0.1)'"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary glow-btn ripple"
+                            style="width: 100%; border: none; cursor: pointer;">Send Message</button>
+
+                        <div id="form-success"
+                            style="display: none; margin-top: 1rem; padding: 1rem; border-radius: 0.5rem; background: rgba(46, 204, 113, 0.2); border: 1px solid var(--accent-green); color: var(--accent-green); text-align: center;">
+                            Message sent successfully!</div>
+                        <div id="form-error"
+                            style="display: none; margin-top: 1rem; padding: 1rem; border-radius: 0.5rem; background: rgba(231, 76, 60, 0.2); border: 1px solid #e74c3c; color: #e74c3c; text-align: center;">
+                            Something went wrong. Please try again.</div>
+                    </form>
+
+                    <div class="footer-socials"
+                        style="margin-top: 3rem; justify-content: center; display: flex; gap: 1.5rem; align-items: center;">
+                        <a href="./assets/Prince_Singh_Resume.pdf" download="Prince_Singh_Resume.pdf" target="_blank"
+                            class="btn glass-btn small-btn ripple resume-btn"
+                            aria-label="Download Prince Singh Resume"
+                            style="padding: 0.8rem 1.5rem; font-size: 0.8rem;">
+                            <span>Resume</span>
+                            <i class="fas fa-download"></i>
                         </a>
-                        <a href="Prince_Singh_Resume.pdf" download class="btn glass-btn glow-hover ripple" style="margin-left: 1rem;">
-                            <span>Download Resume</span>
-                        </a>
-                    </div>
-                    <div class="footer-socials" style="margin-top: 3rem; justify-content: center; display: flex; gap: 1.5rem;">
-                        <a href="https://github.com/PrinceSingh2004" target="_blank"><i
-                                class="fab fa-github"></i></a>
+                        <a href="https://github.com/PrinceSingh2004" target="_blank"><i class="fab fa-github"></i></a>
                         <a href="https://www.linkedin.com/in/prince-singh-20july2004" target="_blank"><i
                                 class="fab fa-linkedin-in"></i></a>
-                        <a href="javascript:void(0)" class="disabled" style="opacity:0.5;cursor:not-allowed;"><i class="fab fa-twitter"></i></a>
                     </div>
                 </div>
             </div>
